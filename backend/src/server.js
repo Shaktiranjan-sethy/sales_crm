@@ -41,6 +41,14 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.json({
+    name: "CRM Sales Management System API",
+    status: "running",
+    health: "/api/health",
+  });
+});
+
 app.get("/api/health", (req, res) => res.json({ ok: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);

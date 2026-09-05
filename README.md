@@ -36,7 +36,7 @@ PORT=5000
 MONGO_URI=mongodb+srv://YOUR_DB_USER:YOUR_DB_PASSWORD@cluster0.xxxxx.mongodb.net/sales_crm?retryWrites=true&w=majority
 JWT_SECRET=change_this_to_a_long_random_secret
 JWT_EXPIRES_IN=7d
-CLIENT_ORIGIN=http://localhost:5173
+CLIENT_ORIGIN=https://sales-crm-theta-mauve.vercel.app
 ```
 
 **Required Variables:**
@@ -51,7 +51,7 @@ CLIENT_ORIGIN=http://localhost:5173
 Create a `.env` file in the `frontend/` directory (optional):
 
 ```env
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=https://sales-crm-tldl.onrender.com/api
 ```
 
 **Note:** The Vite dev server proxies `/api` to the backend by default, so `VITE_API_URL` can be left unset during development.
@@ -69,7 +69,7 @@ npm run seed
 npm run dev
 ```
 
-**Backend API will run on:** `http://localhost:5000`
+**Backend API will run on:** `https://sales-crm-tldl.onrender.com`
 
 **Important Steps:**
 - Copy `.env.example` to `.env`
@@ -86,7 +86,7 @@ npm install
 npm run dev
 ```
 
-**Frontend will run on:** `http://localhost:5173`
+**Frontend will run on:** `https://sales-crm-theta-mauve.vercel.app`
 
 **Important Steps:**
 - Install dependencies with `npm install`
@@ -291,7 +291,7 @@ Users now have comprehensive profiles including:
 - `MONGO_URI` — MongoDB Atlas `mongodb+srv://...` connection string (REQUIRED)
 - `JWT_SECRET` — Secret key for JWT token generation (REQUIRED, use strong random string)
 - `JWT_EXPIRES_IN` — Token expiration time (default: 7d)
-- `CLIENT_ORIGIN` — Frontend URL for CORS (default: http://localhost:5173)
+- `CLIENT_ORIGIN` — Frontend URL for CORS
 
 ### Frontend (.env) - Optional
 
@@ -306,14 +306,12 @@ Users now have comprehensive profiles including:
 ## API Documentation
 
 ### Base URL
-- Development: `http://localhost:5000/api`
+- Development: `https://sales-crm-tldl.onrender.com/api`
 - Production: Depends on deployment configuration
 
 ### Authentication
 All protected endpoints require JWT authentication. Include the token in the Authorization header:
-```
-Authorization: Bearer <your_jwt_token>
-```
+
 
 ### Key Endpoints
 
